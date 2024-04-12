@@ -3,7 +3,7 @@ import axios from 'axios';
 // 'http://localhost:8080'
 
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: 'https://test-project-analytix-ba26f9e8b578.herokuapp.com/',
 });
 
 instance.interceptors.request.use((config) => {
