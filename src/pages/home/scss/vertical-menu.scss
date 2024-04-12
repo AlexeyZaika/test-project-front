@@ -1,0 +1,81 @@
+@import "src/scss/variable.scss";
+
+.vertical-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: calc(100vh - 160px);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $greyColor;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $greyColor3;
+    border-radius: 20px;
+    border: 2px solid $greyColor;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: $whiteColor;
+    border-radius: 10px;
+
+    &:hover, &.active {
+      .vertical-menu__item-icon {
+        background-color: $blueColor2;
+
+        svg {
+          stroke: $blackColor;
+          fill: $blackColor;
+        }
+      }
+
+      .vertical-menu__item-title {
+        color: $blackColor;
+      }
+    }
+
+    &.button {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &__footer {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 30px;
+    border-radius: 5px;
+    transition: $transition;
+
+    svg {
+      stroke: $greyColor3;
+      fill: $greyColor3;
+      transition: $transition;
+    }
+  }
+
+  &__item-title {
+    font-weight: 500;
+    line-height: 20px;
+    color: $greyColor3;
+    transition: $transition;
+  }
+}

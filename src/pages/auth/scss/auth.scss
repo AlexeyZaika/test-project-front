@@ -1,0 +1,213 @@
+@import "src/scss/variable.scss";
+
+.auth {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  &__column {
+    position: relative;
+    flex: 0 0 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__header {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    max-width: 410px;
+    width: 100%;
+    border-bottom: 1px solid $greyColor;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: $greyColor3;
+  }
+
+  &__form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 410px;
+    width: 100%;
+  }
+
+  &__form-row {
+    display: flex;
+    gap: 30px;
+
+    .auth__form-cell {
+      flex: 0 0 calc(50% - 15px);
+      width: calc(50% - 15px);
+    }
+  }
+
+  &__form-cell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &.show {
+      .auth__form-show {
+        background: url("src/assets/icons/hide-icon.svg") center/100% no-repeat;
+      }
+    }
+  }
+
+  &__form-label {
+    font-weight: 500;
+  }
+
+  &__form-input {
+    padding: 15px 25px;
+    border: 1px solid $greyColor2;
+    border-radius: 16px;
+    transition: all 0.5s ease;
+
+    &::placeholder {
+      color: $greyColor3;
+    }
+
+    &:focus {
+      border: 1px solid $blackColor;
+    }
+
+    &.error {
+      border: 1px solid red;
+    }
+  }
+
+  &__form-error {
+    font-size: 12px;
+    color: red;
+  }
+
+  &__form-show {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+    top: 43px;
+    background: url("src/assets/icons/show-icon.svg") center/100% no-repeat;
+  }
+
+  &__form-forget-password {
+    margin-top: 5px;
+    display: inline-block;
+    font-weight: 500;
+    line-height: 20px;
+    color: $blueColor;
+    float: right;
+    transition: $transition;
+
+    &:hover {
+      color: $blackColor;
+    }
+  }
+
+  &__form-check {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 55px;
+    line-height: 18px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border: 1px solid $blueColor;
+      border-radius: 2px;
+      transition: $transition;
+    }
+
+    &.active {
+      &::before {
+        background: $blueColor url("src/assets/icons/check-icon.svg") center no-repeat;
+      }
+    }
+
+    & input {
+      display: none;
+    }
+  }
+
+  &__form-control {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  &__form-button {
+    padding: 20px;
+    min-width: 220px;
+    font-weight: 700;
+    color: $whiteColor;
+    background: linear-gradient(to right, #70A9FF, #316EC9, #0149B4);
+    border-radius: 16px;
+    transition: $transition;
+
+    &:hover {
+      background: linear-gradient(to left, #70A9FF, #316EC9, #0149B4);
+    }
+  }
+
+  &__form-link {
+    font-weight: 500;
+    color: $blueColor;
+    transition: $transition;
+
+    &:hover {
+      color: $blackColor;
+    }
+  }
+
+  &__copyright {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 500;
+    color: $greyColor3;
+    white-space: nowrap;
+  }
+}
+
+.logo-block {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-bottom: 30px;
+  height: calc(100vh + 30px);
+  background: linear-gradient(#868CFF, #4318FF);
+  border-radius: 0 0 0 200px;
+
+  &__image {
+    width: 450px;
+  }
+
+  &__title {
+    font-size: 96px;
+    font-weight: 700;
+    color: $whiteColor;
+  }
+}

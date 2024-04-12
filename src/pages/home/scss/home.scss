@@ -1,0 +1,59 @@
+@import "src/scss/variable.scss";
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.aside {
+  flex: 0 0 270px;
+  width: 270px;
+  padding: 15px 5px;
+  background: linear-gradient(#6FA8FF, #326EC9, #0149B4);
+}
+
+.main-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 15px 30px;
+  background-color: $greyColor4;
+  height: 100vh;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $greyColor;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $greyColor3;
+    border-radius: 20px;
+    border: 2px solid $greyColor;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  height: 100px;
+  background-color: $whiteColor;
+  border-radius: 10px;
+
+  &__image {
+    width: 50px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
